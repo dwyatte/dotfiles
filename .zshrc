@@ -42,4 +42,4 @@ zstyle ':completion:*' menu select
 autoload -U zmv
 # extended globbing but don't error on no match
 setopt EXTENDED_GLOB
-unsetopt nomatch
+unsetopt NOMATCH
