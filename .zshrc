@@ -10,10 +10,8 @@ venv() {
 
 # Tell the terminal about the working directory at each prompt.
 update_terminal_cwd() {
-    if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
-        local PWD_URL="file://$HOSTNAME${PWD// /%20}"
-        printf '\e]7;%s\a' "$PWD_URL"
-    fi
+    local PWD_URL="file://$HOSTNAME${PWD// /%20}"
+    printf '\e]7;%s\a' "$PWD_URL"
 }
 
 # aliases
@@ -23,7 +21,7 @@ alias ls='ls -G'
 export EDITOR=emacs
 
 # spark
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home 2> /dev/null)
 export SPARK_HOME=/usr/local/Cellar/apache-spark/1.5.1/libexec
 export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip:$PYTHONPATH
 
@@ -51,4 +49,5 @@ autoload -U zmv
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
 # set window title and share pwd accross sessions
-precmd() { update_terminal_cwd }
+autoload add-zsh-hook
+add-zsh-hook precmd update_terminal_cwd
