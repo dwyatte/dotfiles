@@ -2,11 +2,18 @@
 
 # activate venv, otherwise create and activate
 venv() {
-if [ ! -d venv ]
-then
-    virtualenv venv
-fi
-source venv/bin/activate
+    if [ ! -d venv ]; then
+	virtualenv venv
+    fi
+    source venv/bin/activate
+}
+
+# Tell the terminal about the working directory at each prompt.
+update_terminal_cwd() {
+    if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
+        local PWD_URL="file://$HOSTNAME${PWD// /%20}"
+        printf '\e]7;%s\a' "$PWD_URL"
+    fi
 }
 
 # aliases
@@ -43,3 +50,5 @@ autoload -U zmv
 # extended globbing but don't error on no match
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
+# set window title and share pwd accross sessions
+precmd() { update_terminal_cwd }
