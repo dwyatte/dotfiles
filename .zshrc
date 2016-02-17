@@ -49,5 +49,5 @@ autoload -U zmv
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
 # set window title and share pwd accross sessions
-autoload add-zsh-hook
+autoload -U add-zsh-hook
 add-zsh-hook precmd update_terminal_cwd
