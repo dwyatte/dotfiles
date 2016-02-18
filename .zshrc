@@ -20,11 +20,12 @@ alias lt='ls -Glth'   # long time sorted
 alias emacs='emacs -nw'
 
 # editor needs to be set for commits without -m
-export EDITOR=emacs
+export EDITOR='emacs -nw'
 
 # go stuff
 export GO15VENDOREXPERIMENT=1
 export PATH=$(go env GOROOT)/bin:$PATH
+export GOPATH=~/go
 
 
 ###############################################################################
