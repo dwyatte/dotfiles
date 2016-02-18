@@ -1,5 +1,9 @@
 # Your previous .profile  (if any) is saved as .profile.mpsaved
 
+###############################################################################
+# misc
+###############################################################################
+
 # activate venv, otherwise create and activate
 venv() {
     if [ ! -d venv ]; then
@@ -8,26 +12,37 @@ venv() {
     source venv/bin/activate
 }
 
-# Tell the terminal about the working directory at each prompt.
+# aliases
+alias ls='ls -G'
+alias emacs='emacs -nw'
+
+# editor needs to be set for commits without -m
+export EDITOR=emacs
+
+
+###############################################################################
+# go stuff
+###############################################################################
+
+if [ $(uname) = Linux ]; then
+    export GOROOT=/usr/local/go
+elif [ $(uname) = Darwin ]; then
+    export GOROOT=/usr/local/Cellar/go/1.5.3
+fi
+export GO15VENDOREXPERIMENT=1
+export PATH=$GOROOT/bin:$PATH
+
+
+###############################################################################
+# zsh stuff
+###############################################################################
+
+# set window title and share pwd accross sessions
 update_terminal_cwd() {
     local PWD_URL="file://$HOSTNAME${PWD// /%20}"
     printf '\e]7;%s\a' "$PWD_URL"
 }
 
-# aliases
-alias ls='ls -G'
-
-# editor needs to be set for commits without -m
-export EDITOR=emacs
-
-# spark
-export JAVA_HOME=$(/usr/libexec/java_home 2> /dev/null)
-export SPARK_HOME=/usr/local/Cellar/apache-spark/1.5.1/libexec
-export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip:$PYTHONPATH
-
-####################
-# zsh stuff
-####################
 # prompt
 PROMPT='%m:%1~ %n$ '
 # in-place delete
@@ -54,7 +69,6 @@ autoload -U zmv
 # extended globbing but don't error on no match
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
-# set window title and share pwd accross sessions
 autoload -U add-zsh-hook
 add-zsh-hook precmd update_terminal_cwd
 add-zsh-hook preexec update_terminal_cwd
