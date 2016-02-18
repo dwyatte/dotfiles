@@ -1,7 +1,7 @@
 # Your previous .profile  (if any) is saved as .profile.mpsaved
 
 ###############################################################################
-# misc
+# aliases, path, etc.
 ###############################################################################
 
 # activate venv, otherwise create and activate
@@ -13,24 +13,18 @@ venv() {
 }
 
 # aliases
-alias ls='ls -G'
+alias ls='ls -G'      # always use color
+alias la='ls -Ga'     # hidden
+alias ll='ls -Glh'   # long
+alias lt='ls -Glth'   # long time sorted
 alias emacs='emacs -nw'
 
 # editor needs to be set for commits without -m
 export EDITOR=emacs
 
-
-###############################################################################
 # go stuff
-###############################################################################
-
-if [ $(uname) = Linux ]; then
-    export GOROOT=/usr/local/go
-elif [ $(uname) = Darwin ]; then
-    export GOROOT=/usr/local/Cellar/go/1.5.3
-fi
 export GO15VENDOREXPERIMENT=1
-export PATH=$GOROOT/bin:$PATH
+export PATH=$(go env GOROOT)/bin:$PATH
 
 
 ###############################################################################
