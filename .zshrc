@@ -30,6 +30,8 @@ export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip
 ####################
 # prompt
 PROMPT='%m:%1~ %n$ '
+# in-place delete
+bindkey '^[[3~'  delete-char # in-place delete
 # zsh history
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
