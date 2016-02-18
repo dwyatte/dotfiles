@@ -36,10 +36,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
-history() { builtin history 1 } # make history behave like bash's
-bindkey '^[[A' up-line-or-search # history completion w/ up
-bindkey '^[[B' down-line-or-search # history completion w/ down
-bindkey '^[[3~'  delete-char # in-place delete
+history() { builtin history 1 }
+# up/down searching
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 # cmd line completion
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -51,3 +55,5 @@ unsetopt NOMATCH
 # set window title and share pwd accross sessions
 autoload -U add-zsh-hook
 add-zsh-hook precmd update_terminal_cwd
+add-zsh-hook preexec update_terminal_cwd
+add-zsh-hook chpwd update_terminal_cwd
