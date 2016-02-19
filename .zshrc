@@ -25,9 +25,9 @@ ls --color &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 export EDITOR='emacs -nw'
 
 # go stuff
-export GO15VENDOREXPERIMENT=1
-export PATH=$(go env GOROOT)/bin:$PATH
 export GOPATH=~/go
+export GO15VENDOREXPERIMENT=1
+command -v go &>/dev/null 2>&1 && export PATH=$(go env GOROOT)/bin:$PATH
 
 
 ###############################################################################
