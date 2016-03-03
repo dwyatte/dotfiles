@@ -26,9 +26,8 @@ export EDITOR='emacs -nw'
 
 # go stuff
 export GO15VENDOREXPERIMENT=1
-export PATH=$(go env GOROOT)/bin:$PATH
 export GOPATH=~/go
-
+export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
 
 ###############################################################################
 # zsh stuff
