@@ -26,7 +26,6 @@ export EDITOR='emacs -nw'
 
 # go stuff
 command -v go &>/dev/null 2>&1 && {
-    export GO15VENDOREXPERIMENT=1
     export GOPATH=~/go
     export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
 }
