@@ -31,6 +31,11 @@ command -v go &>/dev/null 2>&1 && {
     export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
 }
 
+# ruby stuff
+command -v ruby &>/dev/null && command -v gem &>/dev/null && {
+    export PATH=$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH
+}
+
 ###############################################################################
 # zsh stuff
 ###############################################################################
@@ -47,8 +52,8 @@ PROMPT='%m:%1~ %n$ '
 bindkey '^[[3~'  delete-char
 # zsh history
 HISTFILE=$HOME/.zhistory
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 history() { builtin history 1 }
