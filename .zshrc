@@ -29,7 +29,7 @@ export EDITOR='emacs -nw'
 command -v go &>/dev/null && {
     export GOPATH=~/go
     export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
-B}
+}
 
 # ruby stuff
 command -v ruby &>/dev/null && command -v gem &>/dev/null && {
