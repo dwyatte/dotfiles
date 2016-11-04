@@ -20,21 +20,28 @@ alias emacs='emacs -nw'
 alias less='less -R'
 
 # ls colors for bsd/linux
-ls --color &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+ls --color &>/dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
 
 # editor needs to be set for commits without -m
 export EDITOR='emacs -nw'
 
 # go stuff
-command -v go &>/dev/null 2>&1 && {
+command -v go &>/dev/null && {
     export GOPATH=~/go
     export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
-}
+B}
 
 # ruby stuff
 command -v ruby &>/dev/null && command -v gem &>/dev/null && {
     export PATH=$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
+
+# pip stuff -- curl artifactory to see if exists (0.1 should be fine)
+curl -m 0.1 http://10.128.80.50:8081 &>/dev/null && {
+    export PIP_INDEX_URL=http://10.128.80.50:8081/artifactory/api/pypi/pypi-virtual/simple
+    export PIP_TRUSTED_HOST=10.128.80.50
+}
+
 
 ###############################################################################
 # zsh stuff
