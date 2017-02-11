@@ -42,6 +42,10 @@ curl -m 0.05 http://10.128.80.50:8081 &>/dev/null && {
     export PIP_TRUSTED_HOST=10.128.80.50
 }
 
+# cuda stuff
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export PATH="$CUDA_HOME/bin:$PATH"
 
 ###############################################################################
 # zsh stuff
@@ -54,9 +58,9 @@ update_terminal_cwd() {
 }
 
 # prompt
-PROMPT='%m:%1~ %n$ '
+PROMPT="%m:%1~ %n$ "
 # in-place delete
-bindkey '^[[3~'  delete-char
+bindkey "^[[3~" delete-char
 # zsh history
 HISTFILE=$HOME/.zhistory
 HISTSIZE=10000
@@ -73,7 +77,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 # cmd line completion
 autoload -U compinit && compinit
-zstyle ':completion:*' menu select
+zstyle ":completion:*" menu select
 # batch rename
 autoload -U zmv
 # extended globbing but don't error on no match
