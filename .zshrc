@@ -36,12 +36,6 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
     export PATH=$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
 
-# pip stuff -- curl artifactory to see if exists (0.05 should be fine)
-curl -m 0.05 http://10.128.80.50:8081 &>/dev/null && {
-    export PIP_INDEX_URL=http://10.128.80.50:8081/artifactory/api/pypi/pypi-virtual/simple
-    export PIP_TRUSTED_HOST=10.128.80.50
-}
-
 # cuda stuff
 export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
