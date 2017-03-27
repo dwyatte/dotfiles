@@ -26,6 +26,9 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # editor needs to be set for commits without -m
 export EDITOR='emacs -nw'
 
+# conda
+export PATH=$HOME/miniconda3/bin:$PATH
+
 # go stuff
 command -v go &>/dev/null && {
     export GOPATH=~/go
@@ -36,11 +39,6 @@ command -v go &>/dev/null && {
 command -v ruby &>/dev/null && command -v gem &>/dev/null && {
     export PATH=$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
-
-# cuda stuff
-export CUDA_HOME=/usr/local/cuda
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
-export PATH="$CUDA_HOME/bin:$PATH"
 
 ###############################################################################
 # zsh stuff
