@@ -21,6 +21,7 @@ alias less='less -R'
 
 # ls colors for bsd/linux
 ls --color &>/dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # editor needs to be set for commits without -m
 export EDITOR='emacs -nw'
