@@ -4,12 +4,20 @@
 # aliases, path, etc.
 ###############################################################################
 
-# activate venv, otherwise create and activate
+# activate virtualenv venv, otherwise create and activate
 venv() {
-    if [ ! -d venv ]; then
-	virtualenv venv
+    if [ ! -d $PWD/venv ]; then
+	virtualenv $PWD/venv
     fi
-    source venv/bin/activate
+    source $PWD/venv/bin/activate
+}
+
+# activate conda env cenv, otherwise create and activate
+cenv() {
+    if [ ! -d $PWD/cenv ]; then
+	mkdir cenv && conda create -p $PWD/cenv python -y
+    fi
+    source activate $PWD/cenv
 }
 
 # aliases
@@ -27,7 +35,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR='emacs -nw'
 
 # conda
-export PATH=$HOME/miniconda3/bin:$PATH
+export CONDA_HOME=$HOME/miniconda3
+export PATH=$CONDA_HOME/bin:$PATH
 
 # go stuff
 command -v go &>/dev/null && {
