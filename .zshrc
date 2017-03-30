@@ -20,6 +20,9 @@ cenv() {
     source activate $PWD/cenv
 }
 
+# env
+source $HOME/.env
+
 # aliases
 alias la='ls -a'   # hidden
 alias ll='ls -lh'  # long
