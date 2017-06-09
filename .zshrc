@@ -41,6 +41,11 @@ export EDITOR='emacs -nw'
 export CONDA_HOME=$HOME/miniconda3
 export PATH=$CONDA_HOME/bin:$PATH
 
+# cuda
+export CUDA_HOME=/usr/local/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
 # go stuff
 command -v go &>/dev/null && {
     export GOPATH=~/go
