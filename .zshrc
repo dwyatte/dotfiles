@@ -38,6 +38,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR='emacs -nw'
 
 # conda
+#export CONDA_HOME=$HOME/miniconda2
 export CONDA_HOME=$HOME/miniconda3
 export PATH=$CONDA_HOME/bin:$PATH
 
