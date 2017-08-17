@@ -21,7 +21,7 @@ cenv() {
 }
 
 # env
-source $HOME/.env
+[[ -e $HOME/.env ]] && source $HOME/.env
 
 # aliases
 alias la='ls -a'   # hidden
