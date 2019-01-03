@@ -89,6 +89,8 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # cmd line completion
 autoload -U compinit && compinit
 zstyle ":completion:*" menu select
+# k8s completion
+command -v kubectl &>/dev/null && source <(kubectl completion zsh)
 # batch rename
 autoload -U zmv
 # extended globbing but don't error on no match
