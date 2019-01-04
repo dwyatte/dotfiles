@@ -86,6 +86,8 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search # Up (Debian)
+bindkey "${terminfo[kcud1]}" down-line-or-beginning-search # Down (Debian)
 # cmd line completion
 autoload -U compinit && compinit
 zstyle ":completion:*" menu select
@@ -100,3 +102,4 @@ autoload -U add-zsh-hook
 add-zsh-hook precmd update_terminal_cwd
 add-zsh-hook preexec update_terminal_cwd
 add-zsh-hook chpwd update_terminal_cwd
+
