@@ -55,7 +55,7 @@ command -v go &>/dev/null && {
 
 # ruby stuff
 command -v ruby &>/dev/null && command -v gem &>/dev/null && {
-    export PATH=$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH
+    export PATH=$(ruby -rrubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
 
 ###############################################################################
