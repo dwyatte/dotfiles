@@ -29,6 +29,7 @@ alias ll='ls -lh'  # long
 alias lt='ls -lth' # long time sorted
 alias emacs='emacs -nw'
 alias less='less -R'
+alias k='kubectl'
 
 # ls colors for bsd/linux
 ls --color &>/dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
