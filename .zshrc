@@ -9,7 +9,7 @@ venv() {
     if [ ! -d $PWD/venv ]; then
 	virtualenv $PWD/venv
     fi
-    source $PWD/venv/bin/activate
+# source $PWD/venv/bin/activate  # commented out by conda initialize
 }
 
 # activate conda env cenv, otherwise create and activate
@@ -41,7 +41,7 @@ export EDITOR='emacs -nw'
 # conda
 #export CONDA_HOME=$HOME/miniconda2
 export CONDA_HOME=$HOME/miniconda3
-export PATH=$CONDA_HOME/bin:$PATH
+. $CONDA_HOME/etc/profile.d/conda.sh
 
 # cuda
 export CUDA_HOME=/usr/local/cuda
@@ -103,4 +103,3 @@ autoload -U add-zsh-hook
 add-zsh-hook precmd update_terminal_cwd
 add-zsh-hook preexec update_terminal_cwd
 add-zsh-hook chpwd update_terminal_cwd
-
