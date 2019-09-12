@@ -41,7 +41,7 @@ export EDITOR='emacs -nw'
 # conda
 #export CONDA_HOME=$HOME/miniconda2
 export CONDA_HOME=$HOME/miniconda3
-. $CONDA_HOME/etc/profile.d/conda.sh
+export PATH=$CONDA_HOME/bin:$PATH
 
 # cuda
 export CUDA_HOME=/usr/local/cuda
