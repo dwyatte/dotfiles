@@ -9,7 +9,7 @@ venv() {
     if [ ! -d $PWD/venv ]; then
 	virtualenv $PWD/venv
     fi
-# source $PWD/venv/bin/activate  # commented out by conda initialize
+    source $PWD/venv/bin/activate
 }
 
 # activate conda env cenv, otherwise create and activate
