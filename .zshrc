@@ -59,6 +59,9 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
     export PATH=$(ruby -rrubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
 
+# personal stuff
+export PATH=$HOME/bin:$PATH
+
 ###############################################################################
 # zsh stuff
 ###############################################################################
