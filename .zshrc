@@ -101,12 +101,4 @@ autoload -U zmv
 # extended globbing but don't error on no match
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
-autoload -U add-zsh-hook
-# set window title and share pwd accross sessions
-#update_terminal_cwd() {
-#    local PWD_URL="file://$HOSTNAME${PWD// /%20}"
-#    printf '\e]7;%s\a' "$PWD_URL"
-#}
-#add-zsh-hook precmd update_terminal_cwd
-#add-zsh-hook preexec update_terminal_cwd
-#add-zsh-hook chpwd update_terminal_cwd
+
