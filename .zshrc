@@ -71,12 +71,6 @@ export PATH=$HOME/bin:$PATH
 # zsh stuff
 ###############################################################################
 
-# set window title and share pwd accross sessions
-update_terminal_cwd() {
-    local PWD_URL="file://$HOSTNAME${PWD// /%20}"
-    printf '\e]7;%s\a' "$PWD_URL"
-}
-
 # prompt
 PROMPT="%m:%1~ %n$ "
 # in-place delete
@@ -108,6 +102,11 @@ autoload -U zmv
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
 autoload -U add-zsh-hook
-add-zsh-hook precmd update_terminal_cwd
-add-zsh-hook preexec update_terminal_cwd
-add-zsh-hook chpwd update_terminal_cwd
+# set window title and share pwd accross sessions
+#update_terminal_cwd() {
+#    local PWD_URL="file://$HOSTNAME${PWD// /%20}"
+#    printf '\e]7;%s\a' "$PWD_URL"
+#}
+#add-zsh-hook precmd update_terminal_cwd
+#add-zsh-hook preexec update_terminal_cwd
+#add-zsh-hook chpwd update_terminal_cwd
