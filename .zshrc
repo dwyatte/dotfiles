@@ -59,11 +59,6 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
     export PATH=$(ruby -rrubygems -e 'puts Gem.user_dir')/bin:$PATH
 }
 
-# work stuff
-[ -f ~/.quantumrc ] && {
-    source ~/.quantumrc
-}
-
 # personal stuff
 export PATH=$HOME/bin:$PATH
 
