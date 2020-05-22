@@ -62,6 +62,9 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
 # personal stuff
 export PATH=$HOME/bin:$PATH
 
+# work stuff
+# source ~/Development/config_files/square/zshrc
+
 ###############################################################################
 # zsh stuff
 ###############################################################################
@@ -97,3 +100,6 @@ autoload -U zmv
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
