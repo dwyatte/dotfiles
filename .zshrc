@@ -64,8 +64,7 @@ export PATH=$HOME/bin:$PATH
 
 # work stuff
 # source ~/Development/config_files/square/zshrc
-# source ~/Development/ds-cash/setup/ds-cash-shell
-# export PATH="$PATH:$HOME/.rvm/bin"
+source ~/Development/ds-cash/setup/ds-cash-shell
 
 ###############################################################################
 # zsh stuff
