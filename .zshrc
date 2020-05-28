@@ -63,8 +63,8 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
 export PATH=$HOME/bin:$PATH
 
 # work stuff
-# source ~/Development/config_files/square/zshrc
-source ~/Development/ds-cash/setup/ds-cash-shell
+# FILE=$HOME/Development/config_files/square/zshrc && [ -f $FILE ] &&  source $FILE
+FILE=$HOME/Development/ds-cash/setup/ds-cash-shell && [ -f $FILE ] &&  source $FILE
 
 ###############################################################################
 # zsh stuff
