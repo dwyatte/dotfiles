@@ -50,8 +50,8 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 # go stuff
 command -v go &>/dev/null && {
-    export GOPATH=~/go
-    export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
+   export GOPATH=~/go
+   export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
 }
 
 # ruby stuff
@@ -63,8 +63,10 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
 export PATH=$HOME/bin:$PATH
 
 # work stuff
-# FILE=$HOME/Development/config_files/square/zshrc && [ -f $FILE ] &&  source $FILE
-FILE=$HOME/Development/ds-cash/setup/ds-cash-shell && [ -f $FILE ] &&  source $FILE
+export SQUARE_HOME=$HOME/Development
+FILE=$HOME/Development/config_files/square/profile && [ -f $FILE ] && source $FILE
+FILE=$HOME/Development/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
+#FILE=$HOME/Development/config_files/square/zshrc && [ -f $FILE ] && source $FILE
 
 ###############################################################################
 # zsh stuff
