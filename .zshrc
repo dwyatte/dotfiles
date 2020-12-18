@@ -71,9 +71,9 @@ command -v brew &>/dev/null && {
 
 # work stuff
 export SQUARE_HOME=$HOME/Development
-FILE=$HOME/Development/config_files/square/profile && [ -f $FILE ] && source $FILE
-FILE=$HOME/Development/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
-#FILE=$HOME/Development/config_files/square/zshrc && [ -f $FILE ] && source $FILE
+FILE=$SQUARE_HOME/config_files/square/profile && [ -f $FILE ] && source $FILE
+FILE=$SQUARE_HOME/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
+#FILE=$SQUARE_HOME/config_files/square/zshrc && [ -f $FILE ] && source $FILE
 
 ###############################################################################
 # zsh stuff
