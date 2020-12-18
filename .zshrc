@@ -21,7 +21,7 @@ cenv() {
 }
 
 # env
-[[ -e $HOME/.env ]] && source $HOME/.env
+[ -e $HOME/.env ] && source $HOME/.env
 
 # aliases
 alias la='ls -a'   # hidden
@@ -61,6 +61,13 @@ command -v ruby &>/dev/null && command -v gem &>/dev/null && {
 
 # personal stuff
 export PATH=$HOME/bin:$PATH
+
+# brew stuff
+command -v brew &>/dev/null && {
+    DIR="$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+    [ -d $DIR ] && source $DIR/path.zsh.inc
+    [ -d $DIR ] && source $DIR/completion.zsh.inc
+}
 
 # work stuff
 export SQUARE_HOME=$HOME/Development
