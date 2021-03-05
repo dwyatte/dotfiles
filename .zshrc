@@ -54,11 +54,6 @@ command -v go &>/dev/null && {
    export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
 }
 
-# ruby stuff
-command -v ruby &>/dev/null && command -v gem &>/dev/null && {
-   export PATH=$(ruby -rrubygems -e 'puts Gem.user_dir')/bin:$PATH
-}
-
 # personal stuff
 export PATH=$HOME/bin:$PATH
 
