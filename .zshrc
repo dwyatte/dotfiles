@@ -43,6 +43,9 @@ export EDITOR='emacs -nw'
 export CONDA_HOME=$HOME/miniconda3
 export PATH=$CONDA_HOME/bin:$PATH
 
+# poetry
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 # cuda
 export CUDA_HOME=/usr/local/cuda
 export PATH=$CUDA_HOME/bin:$PATH
