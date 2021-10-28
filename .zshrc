@@ -51,19 +51,13 @@ export CUDA_HOME=/usr/local/cuda
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
-# go stuff
-command -v go &>/dev/null && {
-   export GOPATH=~/go
-   export PATH=$GOPATH/bin:$(go env GOROOT)/bin:$PATH
-}
-
 # personal stuff
-export PATH=$HOME/bin:$PATH
+#export PATH=$HOME/bin:$PATH
 
 # work stuff
 export SQUARE_HOME=$HOME/Development
 FILE=$SQUARE_HOME/config_files/square/profile && [ -f $FILE ] && source $FILE
-FILE=$SQUARE_HOME/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
+#FILE=$SQUARE_HOME/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
 #FILE=$SQUARE_HOME/config_files/square/zshrc && [ -f $FILE ] && source $FILE
 
 ###############################################################################
@@ -100,4 +94,5 @@ autoload -U zmv
 # extended globbing but don't error on no match
 setopt EXTENDED_GLOB
 unsetopt NOMATCH
-
+# unique path
+typeset -U PATH
