@@ -4,6 +4,8 @@
 # aliases, path, etc.
 ###############################################################################
 
+export PYENV_VERSION=3.8.12
+
 # activate virtualenv venv, otherwise create and activate
 venv() {
     if [ ! -d $PWD/venv ]; then
@@ -38,11 +40,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # editor needs to be set for commits without -m
 export EDITOR='emacs -nw'
 
-# conda
-#export CONDA_HOME=$HOME/miniconda2
-export CONDA_HOME=$HOME/miniconda3
-export PATH=$CONDA_HOME/bin:$PATH
-
 # poetry
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 
@@ -57,7 +54,7 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 # work stuff
 export SQUARE_HOME=$HOME/Development
 FILE=$SQUARE_HOME/config_files/square/profile && [ -f $FILE ] && source $FILE
-#FILE=$SQUARE_HOME/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
+FILE=$SQUARE_HOME/ds-cash/setup/ds-cash-shell && [ -f $FILE ] && source $FILE
 #FILE=$SQUARE_HOME/config_files/square/zshrc && [ -f $FILE ] && source $FILE
 
 ###############################################################################
@@ -96,3 +93,5 @@ setopt EXTENDED_GLOB
 unsetopt NOMATCH
 # unique path
 typeset -U PATH
+
+export PATH="$HOME/.poetry/bin:$PATH"
