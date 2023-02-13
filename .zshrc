@@ -4,7 +4,7 @@
 # aliases, path, etc.
 ###############################################################################
 
-export PYENV_VERSION=3.8.12
+export PYENV_VERSION=3.9.16
 
 # activate virtualenv venv, otherwise create and activate
 venv() {
@@ -95,3 +95,7 @@ unsetopt NOMATCH
 typeset -U PATH
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
