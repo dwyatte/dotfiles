@@ -4,8 +4,6 @@
 # aliases, path, etc.
 ###############################################################################
 
-export PYENV_VERSION=3.9.16
-
 # activate virtualenv venv, otherwise create and activate
 venv() {
     if [ ! -d $PWD/venv ]; then
@@ -40,8 +38,18 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # editor needs to be set for commits without -m
 export EDITOR='emacs -nw'
 
+# homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
+# pyenv
+export PYENV_VERSION=3.9.16
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # poetry
 export POETRY_VIRTUALENVS_IN_PROJECT=true
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # cuda
 export CUDA_HOME=/usr/local/cuda
@@ -93,9 +101,4 @@ setopt EXTENDED_GLOB
 unsetopt NOMATCH
 # unique path
 typeset -U PATH
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
