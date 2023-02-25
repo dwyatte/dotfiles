@@ -7,7 +7,7 @@
 # activate virtualenv venv, otherwise create and activate
 venv() {
     if [ ! -d $PWD/venv ]; then
-	virtualenv $PWD/venv
+	python -m venv $PWD/venv
     fi
     source $PWD/venv/bin/activate
 }
