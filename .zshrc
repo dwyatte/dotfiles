@@ -42,7 +42,7 @@ export EDITOR='emacs -nw'
 export PATH=/opt/homebrew/bin:$PATH
 
 # pyenv
-export PYENV_VERSION=3.9.16
+export PYENV_VERSION=3.10.14
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -101,4 +101,5 @@ setopt EXTENDED_GLOB
 unsetopt NOMATCH
 # unique path
 typeset -U PATH
-
+# work stuff
+functions | grep change_hermit_env -q && unfunction change_hermit_env
